@@ -5,8 +5,8 @@ const tankBuilder = () => {
     const persons = personData.getAlivePersons();
     let domString = '';
 
-    domString += '<div class="card w-75">';
-    domString += '  <div class="card-header">Shark Tank</div>';
+    domString += '<div class="card w-100">';
+    domString += '  <div class="card-header font-weight-bold">Shark Tank</div>';
     domString += '  <ul class="list-group list-group-flush">';
 
     persons.forEach((person) => {
