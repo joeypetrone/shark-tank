@@ -4,7 +4,7 @@ const persons = [
     { id: 'person3', name: 'Luke Lancaster', isDead: false },
     { id: 'person4', name: 'Aaron Lain', isDead: false },
     { id: 'person5', name: 'Anca Simon', isDead: false },
-    { id: 'person6', name: 'Beth Whitworth', isDead: false },
+    { id: 'person6', name: 'Bethany Whitworth', isDead: false },
     { id: 'person7', name: 'Chris Johnson', isDead: false },
     { id: 'person8', name: 'Davis Lindell', isDead: false },
     { id: 'person9', name: 'David Everett', isDead: false },
@@ -19,11 +19,11 @@ const persons = [
     { id: 'person18', name: 'Michele Rawlins', isDead: false },
     { id: 'person19', name: 'Monique Bass', isDead: false },
     { id: 'person20', name: 'Ola Oladinni', isDead: false },
-    { id: 'person21', name: 'Sarah Holder', isDead: true },
-    { id: 'person22', name: 'Stephen Castaneda', isDead: true },
-    { id: 'person23', name: 'Steven Zelenak', isDead: true },
-    { id: 'person24', name: 'Todd Spainhour', isDead: true },
-    { id: 'person25', name: 'Zac Crumpton', isDead: true }
+    { id: 'person21', name: 'Sarah Holder', isDead: false },
+    { id: 'person22', name: 'Stephen Castaneda', isDead: false },
+    { id: 'person23', name: 'Steven Zelenak', isDead: false },
+    { id: 'person24', name: 'Todd Spainhour', isDead: false },
+    { id: 'person25', name: 'Zac Crumpton', isDead: false }
 ];
 
 const getAlivePersons = () => {
@@ -34,4 +34,14 @@ const getDeadPersons = () => {
     return persons.filter((x) => x.isDead === true);
 };
 
-export default { getAlivePersons, getDeadPersons };
+
+const randomMurder = () => {
+    const alivePeople = getAlivePersons();
+    const randomNum = Math.floor(Math.random() * alivePeople.length);
+    const deadPersonId = alivePeople[randomNum].id;
+    const deadMan = persons.findIndex((x)=> x.id === deadPersonId);
+    
+    persons[deadMan].isDead = true;
+};
+
+export default { getAlivePersons, getDeadPersons, randomMurder };
