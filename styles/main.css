@@ -5,3 +5,8 @@ body {
 .navbar {
     font-family: 'Trade Winds';
 }
+
+#graveyard-card {
+    max-width: 131px;
+    min-width: 131px;
+}
