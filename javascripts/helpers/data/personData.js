@@ -34,6 +34,7 @@ const getDeadPersons = () => {
     return persons.filter((x) => x.isDead === true);
 };
 
+
 const randomMurder = () => {
     const alivePeople = getAlivePersons();
     const randomNum = Math.floor(Math.random() * alivePeople.length);
